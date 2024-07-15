@@ -1,0 +1,43 @@
+{
+    "manifest_version": 3,
+    "name": "Salesforce Query Extension",
+    "version": "1.0",
+    "description": "CSP Extension",
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icon16.png"
+        }
+    },
+    "background": {
+    "service_worker": "background.js"
+  },
+    "host_permissions": [
+    "https://*.salesforce.com/*",
+        "https://*.force.com/*"
+  ],
+    "permissions": [
+        "activeTab",
+        "storage",
+        "tabs",
+        "scripting",
+        "cookies"
+     ],
+     "web_accessible_resources": [
+    {
+      "resources": ["sidebar.html","sidebar.js","sidebar.css","sounds/alert.mp3", "sounds/double_beep.mp3"],
+
+      "matches": ["<all_urls>"]
+    }
+  ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.salesforce.com/*",
+                "https://*.force.com/*"
+            ],
+            "js": ["content.js"],
+            "css": ["sidebar.css"]
+        }
+    ]
+}

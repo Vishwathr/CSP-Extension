@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSP Extension</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            width: 500px; /* Adjusted width */
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 8px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 5px;
+            margin-top: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSP Extension</h1>
+    <button id="getActiveSession">Get Active Session</button>
+    <div id="sessionCheck" style="display: none;">
+        <button id="exportData">Export Data</button>
+        <button id="monitorAsyncQueue">Monitor Async Queue</button>
+        
+        <!-- Export Data Section -->
+        <div id="exportSection" style="display: none;">
+            <label for="query">Enter Salesforce Query:</label>
+            <textarea id="query" placeholder="Enter your Salesforce query..."></textarea>
+            <button id="runExport">Run Export</button>
+            <div id="exportedData">
+                <h2>Exported Data:</h2>
+                <p id="recordCount"></p>
+                <table id="exportedResult"></table>
+            </div>
+        </div>
+
+        <!-- Monitor Async Queue Section -->
+        <div id="monitorSection" style="display: none;">
+            <label for="monitorQuery">Query:</label>
+            <textarea id="monitorQuery" disabled></textarea>
+            <label for="monitorDuration">Monitoring Duration: (In Minutes)</label>
+            <input type="number" id="monitorDuration" min="1" step="1"><br><br><br>
+
+            <label for="monitorInterval">Monitor Interval</label>
+            <input type="number" id="monitorInterval" min="1" step="1" value= "3" disabled><br><br><br>
+
+
+            <button id="startMonitor" >Start Monitor</button>
+            <button id="stopMonitor" style="display: none" >Stop Monitor</button>
+            <p id="monitorResult"></p>
+            <p id="monitorStatus">Monitor Status </p>
+            <textarea id="myTextarea" rows="10" cols="30" placeholder="Monitor Status will be updated here"></textarea>
+
+        </div>
+
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

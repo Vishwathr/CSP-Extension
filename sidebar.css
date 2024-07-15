@@ -1,0 +1,79 @@
+/* sidebar.css */
+
+#myExtensionSidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  overflow-y: auto; /* Enable scrolling if content exceeds sidebar height */
+}
+
+.sidebar-content {
+  padding: 20px;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+    background-color: #0070d2;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.sidebar-header h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.sidebar-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+}
+
+.sidebar-footer {
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.sidebar-footer button {
+    background-color: #0070d2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.sidebar-footer button:hover {
+    background-color: #005bb5;
+}
